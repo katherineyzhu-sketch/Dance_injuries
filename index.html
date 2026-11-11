@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f5f1">
+<meta name="description" content="An interactive, offline guide to the anatomy of dance jumps, tissue loading, and recovery.">
+<title>Kinetic — Beneath every jump</title>
+<style>
+:root{--paper:#f6f5f1;--white:#fff;--ink:#292c35;--muted:#72747c;--line:#e5e4e1;--purple:#7260ae;--purple-dark:#58448d;--lilac:#eee9f6;--sage:#527f70;--orange:#c57949;--peach:#f6e9dd;--radius:20px;--font:Inter,"Avenir Next",Avenir,"Segoe UI",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:14px;-webkit-font-smoothing:antialiased}button,input{font:inherit}button,a,input{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:default;opacity:.5}button,a,input,summary{outline-offset:5px}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--purple)}a{color:inherit}button{color:inherit}svg{display:block}button svg{flex-shrink:0}button{transition:background .15s,color .15s,border-color .15s}button:hover{filter:brightness(.97)}.wrap{max-width:1320px;margin:auto;padding:0 48px}.topbar{height:91px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:20px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:780;font-size:25px;letter-spacing:-1.1px}.brandmark{width:31px;height:31px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:4px;transform:rotate(-9deg)}.brandmark i{background:var(--purple);border-radius:7px 3px 7px 3px}.brandmark i:nth-child(2){opacity:.46}.brandmark i:nth-child(3){opacity:.65}.header-note{font-size:12px;color:var(--muted);margin-left:12px;border-left:1px solid #d8d6d3;padding-left:21px;font-weight:400;letter-spacing:0}.nav{display:flex;align-items:center;gap:26px;font-size:12px}.nav>a{text-decoration:none;color:#65666c}.download{display:flex;align-items:center;gap:9px;padding:11px 15px;border:1px solid #d9d7d5;background:transparent;border-radius:9px;font-weight:600;font-size:12px}.hero{padding:49px 0 36px;display:flex;align-items:flex-end;justify-content:space-between;gap:35px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:1.9px;line-height:1.5;text-transform:uppercase}.hero .eyebrow{color:var(--purple);display:flex;align-items:center;gap:9px}.small-line{width:23px;height:1px;background:var(--purple)}h1{font-size:clamp(38px,4.6vw,62px);line-height:1.1;letter-spacing:-2.8px;font-weight:650;margin:15px 0 15px}h1 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;color:var(--purple);letter-spacing:-2px}p{line-height:1.7}.intro{font-size:14px;max-width:590px;color:var(--muted);margin:0;line-height:1.75}.hero-aside{flex-shrink:0;padding-bottom:3px;text-align:right;font-size:11px;color:var(--muted);line-height:1.9}.offline{display:flex;gap:6px;align-items:center;justify-content:flex-end;color:var(--sage);font-weight:600;font-size:11px}.dot{width:6px;height:6px;display:inline-block;border-radius:50%;background:currentColor}.study-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px;gap:16px}.study-top .eyebrow{color:var(--muted);letter-spacing:1.35px}.segmented{padding:4px;display:flex;gap:3px;border:1px solid var(--line);border-radius:11px;background:#edece8}.segmented button{background:transparent;border:0;border-radius:7px;padding:9px 17px;color:#77767e;font-size:12px;display:flex;align-items:center;gap:8px;white-space:nowrap}.segmented button[aria-pressed=true]{background:var(--white);color:var(--purple-dark);box-shadow:0 1px 4px #342b4110;font-weight:650}.study-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(310px,1fr);gap:20px;align-items:stretch}.scene-card,.tissue-card,.timeline{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}.scene-card{display:flex;flex-direction:column;position:relative}.scene-head{position:absolute;z-index:2;top:22px;left:25px;right:25px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;pointer-events:none}.scene-head h2{font-size:14px;font-weight:600;margin:0 0 5px}.scene-head p{font-size:10px;color:var(--muted);margin:0}.view-chip{font-size:9px;letter-spacing:.8px;display:flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:20px;padding:6px 9px;color:var(--muted);background:#ffffffb3}.anatomy-wrap{background:radial-gradient(ellipse at 51% 46%,#f0edf6 0%,#fbfafc 43%,#fdfdfc 74%);flex:1;min-height:550px;position:relative;display:flex;align-items:center;justify-content:center}.anatomy{width:100%;max-height:603px;height:100%;min-height:550px}.anatomy text{font-family:var(--font)}.anatomy .hotspot{cursor:pointer;outline:none}.anatomy .hotspot:focus-visible .labelbox{stroke:var(--purple);stroke-width:2}.labelbox{fill:white;stroke:#e2e0e8;stroke-width:1}.hotspot .target-dot{fill:#a49ab9;stroke:#fff;stroke-width:3}.hotspot[aria-pressed=true] .labelbox{fill:var(--purple);stroke:var(--purple)}.hotspot[aria-pressed=true] .labeltext{fill:#fff}.hotspot[aria-pressed=true] .target-dot{fill:var(--purple)}.labeltext{font-size:10px;fill:#65616e;font-weight:550}.leader{stroke:#b9afcd;stroke-width:1;fill:none;stroke-dasharray:3 3}.body-outline{fill:#e3dfe9;fill-opacity:.55;stroke:#b9b0c6;stroke-opacity:.65;stroke-width:1.1}.bone{fill:url(#boneFill);stroke:#9b90af;stroke-width:1.1;stroke-linejoin:round}.bone-line{stroke:#c0b8cf;fill:none;stroke-width:1}.tendon{fill:none;stroke:#b99d87;stroke-linecap:round}.fine-tendon{fill:none;stroke:#c4ad9a;stroke-width:1.5;stroke-linecap:round}.scene-legend{position:absolute;left:24px;bottom:18px;display:flex;gap:15px;font-size:9px;color:var(--muted);align-items:center}.legend-item{display:flex;align-items:center;gap:6px}.legend-swatch{width:7px;height:7px;border:1px solid #b8abc7;background:#ebe6f1;border-radius:2px}.legend-swatch.tendon-swatch{background:#d9bfa8;border-color:#b99d87}.legend-swatch.load-swatch{background:#c2b1e3;border-color:#a58bc8}.zoom-hint{position:absolute;right:23px;bottom:18px;color:#8c8794;font-size:9px;display:flex;gap:5px;align-items:center}.scene-controls{padding:17px 22px;border-top:1px solid var(--line);background:#fff;display:flex;gap:20px;align-items:center}.circle-button{width:36px;height:36px;display:grid;place-items:center;border:0;border-radius:50%;background:var(--purple);color:#fff;flex-shrink:0}.phase-track{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;flex:1}.phase-btn{background:transparent;border:0;padding:3px 0 0;text-align:left;color:#95919b;font-size:9px;letter-spacing:.3px}.phase-bar{display:block;height:3px;border-radius:3px;background:#e9e5ee;margin-bottom:7px;overflow:hidden}.phase-bar i{display:block;background:var(--purple);height:100%;width:0}.phase-btn[aria-pressed=true]{color:var(--purple-dark);font-weight:600}.cycle-note{font-size:9px;color:#96919d;white-space:nowrap}.tissue-card{padding:24px 25px;display:flex;flex-direction:column}.section-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}.section-top .eyebrow{font-size:9px;letter-spacing:1.3px;color:#89838f}.section-counter{font-size:10px;color:#ada6b5}.region-select{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:22px}.region-btn{padding:10px 2px 8px;border:1px solid transparent;background:#f7f6f8;border-radius:8px;color:#736c7e;font-size:9px;display:flex;flex-direction:column;align-items:center;gap:6px}.region-btn svg{width:24px;height:27px}.region-btn[aria-pressed=true]{border-color:#d1c4e5;background:#efebf7;color:var(--purple-dark)}.tissue-heading{display:flex;align-items:center;justify-content:space-between;gap:15px}.tissue-heading h2{font-size:25px;letter-spacing:-.8px;line-height:1.2;font-weight:650;margin:0 0 6px}.tissue-type{font-size:9px;letter-spacing:1.4px;color:var(--purple);text-transform:uppercase;font-weight:650}.tissue-number{font:italic 34px Georgia,serif;color:#ddd5e9}.tissue-summary{font-size:13px;line-height:1.65;color:var(--muted);margin:11px 0 16px;min-height:40px}.micro-panel{position:relative;background:#f8f6fa;border-radius:11px;border:1px solid #ece6f1;margin-bottom:17px;overflow:hidden}.micro-label{position:absolute;top:10px;left:12px;font-size:8px;font-weight:650;letter-spacing:1.1px;color:#9b90a8;z-index:1}.micro-svg{width:100%;height:95px}.micro-bottom{padding:8px 11px;background:#f2eef6;display:flex;align-items:center;justify-content:space-between;gap:7px}.micro-state{display:flex;align-items:center;gap:6px;font-size:9px;font-weight:650;color:var(--purple-dark)}.micro-caption{font-size:9px;color:#7c7187}.action-copy{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:17px}.action-copy h3{font-size:8px;font-weight:700;letter-spacing:1.2px;color:var(--purple);display:flex;gap:5px;align-items:center;margin:0 0 7px}.action-copy p{font-size:12px;line-height:1.65;color:#74717b;margin:0}.risk-note{background:#f7f5f0;border-radius:10px;padding:13px 14px;margin-top:auto}.risk-note .eyebrow{font-size:8px;color:#a58363;letter-spacing:1.2px}.risk-note h3{font-size:12px;line-height:1.5;margin:4px 0;color:#63574e;font-weight:600}.risk-note p{font-size:11px;line-height:1.65;color:#766b61;margin:0}.timeline{margin-top:20px;padding:26px 28px 23px}.timeline-top{display:flex;align-items:center;justify-content:space-between;gap:20px}.timeline h2{font-size:21px;font-weight:650;letter-spacing:-.55px;margin:7px 0 7px}.timeline .eyebrow{font-size:9px;color:#8b8594;letter-spacing:1.4px}.timeline-top p{font-size:11px;color:var(--muted);margin:0;max-width:460px}.scenario-select{display:flex;gap:6px}.scenario-select button{display:flex;gap:7px;align-items:center;font-size:10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:#817c88;padding:11px 13px;white-space:nowrap}.scenario-select button[aria-pressed=true]{background:var(--lilac);border-color:#cbbde0;color:var(--purple-dark)}.scenario-select button:first-child[aria-pressed=true]{background:#eaf0eb;border-color:#bbd0c5;color:#527b67}.scenario-select .dot{width:5px;height:5px}.timeline-body{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:35px;align-items:center;margin-top:22px}.chart-heading{display:flex;justify-content:space-between;font-size:8px;letter-spacing:1.1px;font-weight:600;color:#a09aa8}.chart-legend{display:flex;gap:14px;font-size:9px;font-weight:400;letter-spacing:0}.chart-legend span{display:flex;align-items:center;gap:5px}.chart-legend i{display:inline-block;width:12px;border-top:2px solid #a096b8}.chart-legend span:last-child i{border-color:#88a693;border-top-style:dashed}.chart{width:100%;height:90px;margin-top:4px;overflow:visible}.chart text{font:9px var(--font);fill:#97909f}.time-controls{display:flex;align-items:center;gap:10px;margin-top:4px}.timeline-play{border:0;background:#eeebf3;color:var(--purple-dark);width:28px;height:28px;border-radius:6px;display:grid;place-items:center;flex-shrink:0}.week-label{min-width:59px;font-size:10px;font-variant-numeric:tabular-nums;color:#7d748b}.timeline input[type=range]{width:100%;height:18px;accent-color:var(--purple);cursor:pointer;margin:0}.reset{border:0;background:transparent;color:#99909e;padding:7px;flex-shrink:0}.timeline-summary{border-left:1px solid var(--line);padding-left:26px}.balance-heading{font-size:9px;color:#99909f;margin-bottom:8px}.balance-value{font-size:16px;letter-spacing:-.3px;font-weight:600;color:var(--purple-dark);margin-bottom:10px}.balance-meter{height:5px;background:#ece7f1;border-radius:4px;overflow:hidden;margin-bottom:11px}.balance-meter i{display:block;width:0;background:linear-gradient(90deg,#ab96cc,#ab739a);height:100%;transition:width .15s}.timeline-summary p{font-size:10px;line-height:1.7;color:#8d8394;margin:0}.timeline-footnote{font-size:10px;color:#817786;margin:18px 0 0;padding-top:14px;border-top:1px solid #efedf1;display:flex;align-items:flex-start;gap:7px}.takeaway{display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:17px;padding:26px 5px 31px}.takeaway-icon{height:35px;width:35px;border-radius:50%;background:#e9ede7;color:#77957b;display:grid;place-items:center}.takeaway h2{font-size:13px;font-weight:600;margin:0 0 4px}.takeaway p{color:var(--muted);font-size:11px;margin:0;line-height:1.7}.takeaway a{font-size:11px;color:var(--purple);text-decoration:none;white-space:nowrap}.learn{border-top:1px solid var(--line);padding:28px 0 35px}.learn>summary{font-size:12px;font-weight:600;cursor:pointer;color:#6c6577;list-style:none;display:flex;align-items:center;justify-content:space-between}.learn>summary::-webkit-details-marker{display:none}.learn>summary:after{content:"+";font-size:20px;color:#93879f}.learn[open]>summary:after{content:"−"}.learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:22px}.learn h3{font-size:12px;margin:16px 0 7px}.learn p,.learn li{font-size:11px;line-height:1.8;color:var(--muted)}.learn ul{padding-left:17px;margin-top:8px}.learn li{margin-bottom:6px}.learn a{color:var(--purple-dark);text-underline-offset:3px}footer{border-top:1px solid var(--line);padding:20px 0 28px;display:flex;align-items:center;justify-content:space-between;font-size:10px;color:#99939d}footer .footer-brand{font-size:16px;font-weight:650;color:#7e758c;letter-spacing:-.7px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#39313f;color:white;box-shadow:0 5px 25px #332b3d20;padding:13px 20px;font-size:12px;border-radius:10px;z-index:20;max-width:calc(100vw - 30px);text-align:center}.toast[hidden]{display:none}#impactRing{fill:none;stroke:#a68bbf;stroke-width:1.2}.particle{fill:#b67c9a}
+@media(min-width:1450px){.wrap{max-width:1400px}.anatomy-wrap{min-height:590px}.anatomy{max-height:640px}.tissue-summary{font-size:13px}.action-copy p{font-size:12px}.risk-note p{font-size:11px}}
+@media(max-width:1050px){.wrap{padding:0 28px}.header-note{display:none}.hero-aside{display:none}.study-grid{grid-template-columns:minmax(0,1.3fr) minmax(300px,1fr);gap:14px}.tissue-card{padding:21px}.scene-head{left:20px;right:20px}.anatomy-wrap,.anatomy{min-height:570px}.anatomy{height:100%;max-height:680px}.cycle-note{display:none}.scene-controls{gap:14px;padding:17px}.tissue-heading h2{font-size:23px}.timeline-top{align-items:flex-start}.scenario-select{flex-direction:column}.timeline-body{gap:24px;grid-template-columns:minmax(0,1fr) 205px}.timeline-summary{padding-left:22px}.zoom-hint{display:none}.region-select{gap:4px}.region-btn{font-size:8px}}
+@media(max-width:760px){.wrap{padding:0 20px}.topbar{height:75px}.brand{font-size:23px}.brandmark{width:27px;height:27px}.nav{gap:15px}.nav>a{display:none}.download{font-size:11px;padding:9px 12px}.hero{padding:34px 0 27px}h1{font-size:46px;letter-spacing:-2.3px}.intro{font-size:13px;max-width:530px}.study-top{flex-direction:column;align-items:flex-start;gap:12px}.segmented{width:100%}.segmented button{flex:1;justify-content:center;font-size:11px;padding:10px}.study-grid{grid-template-columns:1fr;gap:15px}.anatomy-wrap{min-height:0}.anatomy{min-height:0;max-height:none;height:auto;aspect-ratio:620/560}.scene-head{top:18px}.scene-controls{padding:16px 20px;gap:20px}.cycle-note{display:block}.tissue-card{padding:24px}.region-select{grid-template-columns:repeat(5,1fr);margin-bottom:20px;padding-bottom:17px}.region-btn{font-size:10px;padding:10px;flex-direction:row;justify-content:center;gap:6px}.region-btn svg{width:20px;height:22px}.tissue-heading h2{font-size:26px}.tissue-summary{min-height:0}.micro-svg{height:105px}.action-copy p{font-size:12px}.risk-note p{font-size:11px}.timeline{padding:23px}.timeline-top{display:block}.timeline h2{font-size:23px}.scenario-select{flex-direction:row;margin-top:17px}.scenario-select button{flex:1;justify-content:center;font-size:10px;padding:10px}.timeline-body{grid-template-columns:1fr;gap:20px;margin-top:20px}.timeline-summary{border-left:0;border-top:1px solid var(--line);padding:18px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 25px}.balance-heading,.balance-value,.balance-meter{grid-column:1}.timeline-summary p{grid-column:2;grid-row:1/4;align-self:center;font-size:11px}.balance-value{font-size:17px}.balance-meter{margin-bottom:0}.takeaway{grid-template-columns:35px 1fr;gap:13px;padding:24px 0}.takeaway a{grid-column:2}.learn-grid{grid-template-columns:1fr;gap:10px}.scene-legend{left:20px;bottom:14px}footer{font-size:9px}.timeline-footnote{font-size:9px}.chart{height:95px}}
+@media(max-width:420px){.wrap{padding:0 14px}h1{font-size:39px}.hero .eyebrow{font-size:9px}.segmented button{padding:9px 6px;font-size:10px}.segmented svg{width:15px}.anatomy{aspect-ratio:620/620}.scene-head h2{font-size:12px}.scene-head p{font-size:9px}.view-chip{font-size:8px;padding:5px 7px}.scene-legend{gap:10px;font-size:8px}.cycle-note{display:none}.tissue-card{padding:21px}.region-btn{flex-direction:column;padding:8px 3px;font-size:9px}.timeline{padding:20px}.scenario-select button{padding:10px 7px;font-size:9px}.chart-legend{font-size:8px;gap:8px}.chart-heading{font-size:7px}.timeline-summary{gap:0 15px}.balance-value{font-size:15px}.timeline-summary p{font-size:10px}.brand{font-size:21px}.nav{gap:0}footer>span:last-child{max-width:195px;text-align:right;line-height:1.7}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{body{background:white}.wrap{padding:0}.download,.scene-controls,.time-controls,.nav,.takeaway a{display:none}.hero{padding:20px 0}.study-grid{grid-template-columns:1.3fr 1fr}.timeline{break-inside:avoid}.learn{display:block}.anatomy{max-height:500px;min-height:450px}.anatomy-wrap{min-height:450px}footer{margin-top:15px}}
+
+/* Movement scrubbing and the fixed-view anatomy panel. */
+.anatomy-panel{position:relative;display:flex;flex-direction:column;flex:1}.view-explanation{margin:0;padding:10px 22px 0;color:#82788e;font-size:10px;background:#fff}.phase-note{margin:0;padding:5px 22px 13px;font-size:11px;color:#6c5b81;line-height:1.5}.scene-controls{gap:13px;padding-top:14px;padding-bottom:13px}.phase-btn{line-height:1.5;min-width:0}.phase-btn>span:last-child{display:block;min-height:27px}.cycle-note{max-width:64px;white-space:normal;line-height:1.5}.motion-scrubber{display:flex;align-items:center;gap:12px;padding:0 22px 17px;font-size:9px;color:#8a8097}.motion-scrubber label{min-width:48px}.motion-scrubber input{flex:1;min-width:0;accent-color:var(--purple);height:16px;cursor:pointer}.motion-scrubber output{font-variant-numeric:tabular-nums;min-width:64px;text-align:right}.sequence-progress{height:2px;background:#eeebf4}.sequence-progress i{display:block;width:0;height:100%;background:#b5a3d0}.anatomy .bone{stroke-width:1}.anatomy{min-height:550px}.anatomy-wrap{min-height:550px}.scene-legend{bottom:14px}
+@media(max-width:1050px){.cycle-note{display:none}.phase-btn{font-size:8px}.view-explanation{font-size:9px}.phase-note{font-size:10px}}
+@media(max-width:760px){.anatomy,.anatomy-wrap{min-height:0}.anatomy{aspect-ratio:620/590}.phase-btn{font-size:9px}.cycle-note{display:none}.view-explanation{font-size:10px}.phase-note{font-size:11px}.scene-controls{gap:15px}.motion-scrubber{padding-bottom:18px}.study-top .segmented button{flex:1;min-width:0;padding:10px 7px;gap:5px}}
+@media(max-width:420px){.view-explanation,.phase-note{padding-left:17px;padding-right:17px}.phase-btn{font-size:8px}.scene-controls{padding-left:16px;padding-right:16px;gap:12px}.scene-legend{gap:8px;font-size:7px}.zoom-hint{display:none}.anatomy{aspect-ratio:620/610}.study-top .segmented button svg{display:none}.motion-scrubber{padding-left:17px;padding-right:17px}}
+.playback-options{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:0 22px 16px;color:#82788e;font-size:10px}.playback-options label{display:flex;align-items:center;gap:8px}.playback-options select{font:inherit;color:var(--purple-dark);background:#f5f2f9;border:1px solid #d8cfe4;border-radius:6px;padding:6px 8px;outline-offset:3px}.playback-options a{color:var(--purple-dark);text-underline-offset:3px}.playback-options select:focus-visible{outline:3px solid var(--purple)}
+/* Keep the view caption and legend in separate layout rows at every width. */
+.scene-footer{display:grid;gap:12px;padding:0 24px 15px;background:#fdfdfc}
+.scene-caption{margin:0;text-align:center;color:#a79bad;font-size:8px;letter-spacing:1.5px;line-height:1.5}
+.scene-key{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.scene-legend{position:static;flex-wrap:wrap;gap:8px 15px;font-size:9px;line-height:1.5}
+.legend-item{white-space:nowrap}.legend-swatch{flex-shrink:0}
+.zoom-hint{position:static;flex-shrink:0}
+@media(max-width:760px){.scene-footer{padding:0 20px 14px}.scene-legend{font-size:9px;gap:8px 12px}}
+@media(max-width:420px){.scene-head{position:static;padding:18px 20px 0}.scene-footer{padding-left:17px;padding-right:17px}.scene-legend{font-size:8px;gap:8px 10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Kinetic home"><span class="brandmark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>kinetic<span class="header-note">A dance science field guide</span></a>
+    <nav class="nav" aria-label="Main navigation"><a href="#explore">Explore the anatomy</a><a href="#about" id="aboutLink">About the model</a><button class="download" id="downloadBtn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4"/></svg>Download HTML</button></nav>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div><div class="eyebrow"><span class="small-line"></span>Movement, under the surface</div><h1 id="pageTitle">Beneath every <em>jump.</em></h1><p class="intro">A moment in the air. A whole body at work. Explore how dance jumps load your bones and tendons—and how that load can build over time.</p></div>
+      <div class="hero-aside"><div class="offline"><span class="dot"></span>Made to explore, anywhere</div>One file. No connection needed.</div>
+    </section>
+    <section id="explore" aria-label="Interactive dance jump anatomy">
+      <div class="study-top"><span class="eyebrow">01 &nbsp;/&nbsp; Explore the movement</span><div class="segmented" role="group" aria-label="Jump type">
+        <button data-jump="saute" aria-pressed="true"><svg width="17" height="18" viewBox="0 0 22 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="4" r="2"/><path d="M11 7v8M5 8l6 2 6-2M11 15 7 21m4-6 4 6"/></svg>Sauté</button>
+        <button data-jump="jete" aria-pressed="false"><svg width="19" height="18" viewBox="0 0 26 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="m13 7-1 8M6 8l7 2 7-3m-8 8-9 5m9-5 10 4"/></svg>Grand jeté</button>
+        <button data-jump="echappe" aria-pressed="false"><svg width="19" height="18" viewBox="0 0 26 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="M13 7v8M3 10l10-2 10 2M13 15 6 22m7-7 7 7"/></svg>Échappé</button>
+      </div></div>
+      <div class="study-grid">
+        <div class="scene-card">
+          <div id="anatomyPanel" class="anatomy-panel" role="region" aria-labelledby="jumpTitle">
+          <div class="scene-head"><div><h2 id="jumpTitle">Sauté in first position</h2><p id="jumpDescription">Demi-plié. Extend. Point. Land through the feet.</p></div><span class="view-chip"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="M8 0v4m0 8v4M0 8h4m8 0h4"/></svg>ANATOMICAL STUDY</span></div>
+          <div class="anatomy-wrap">
+            <svg class="anatomy" id="anatomy" viewBox="0 0 620 590" role="img" aria-labelledby="anatomyTitle anatomyDesc">
+              <title id="anatomyTitle">Anatomy of a dancer jumping, front view</title><desc id="anatomyDesc">Animated bones and tendons show hip, knee and ankle movement. Select a labeled structure to explore it. The region buttons alongside the diagram provide the same controls.</desc>
+              <defs>
+                <linearGradient id="boneFill" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#e7e1ef"/><stop offset=".45" stop-color="#fdfcfe"/><stop offset="1" stop-color="#ddd4e8"/></linearGradient>
+                <linearGradient id="loadFill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b294d0" stop-opacity=".55"/><stop offset="1" stop-color="#c8879e" stop-opacity=".25"/></linearGradient>
+                <radialGradient id="targetGlow"><stop stop-color="#bd8fba" stop-opacity=".58"/><stop offset="1" stop-color="#c8a7d9" stop-opacity="0"/></radialGradient>
+                <pattern id="grid" width="29" height="29" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#d9d2e3" opacity=".6"/></pattern>
+              </defs>
+              <rect x="100" y="80" width="420" height="425" fill="url(#grid)" opacity=".7"/>
+              <path d="M310 88v442" stroke="#e5dfec" stroke-dasharray="3 6"/>
+              <path d="M142 529h338" stroke="#e0d9e9" stroke-width="1"/>
+              <ellipse id="floorShadow" cx="318" cy="529" rx="66" ry="8" fill="#d6cce3" opacity=".35"/>
+              <ellipse id="impactRing" cx="325" cy="527" rx="50" ry="9" opacity="0"/>
+              <g id="floorTicks"></g><g id="farLeg"></g><g id="upperBody"></g><g id="nearLeg"></g><g id="anatomyLabels"></g>
+            </svg>
+          </div>
+          <div class="scene-footer">
+            <p class="scene-caption" id="viewCaption">FRONT VIEW · TRANSPARENT ANATOMY</p>
+            <div class="scene-key"><div class="scene-legend"><span class="legend-item"><i class="legend-swatch"></i>Bone</span><span class="legend-item"><i class="legend-swatch tendon-swatch"></i>Tendon / fascia</span><span class="legend-item"><i class="legend-swatch load-swatch"></i>Accumulated load</span></div><span class="zoom-hint">Select a structure <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 9 9 3M3 3h6v6"/></svg></span></div>
+          </div>
+          </div>
+          <p class="view-explanation" id="viewExplanation">Front view · first position, with long legs and a natural gap in flight.</p>
+          <p class="phase-note" id="phaseNote"></p>
+          <div class="scene-controls"><button class="circle-button" id="motionToggle" aria-label="Pause jump animation"></button><div class="phase-track" id="phaseTrack" role="group" aria-label="Jump phase">
+            <button class="phase-btn" data-phase="0" aria-pressed="true"><span class="phase-bar"><i></i></span>01 &nbsp; Prepare</button><button class="phase-btn" data-phase="1" aria-pressed="false"><span class="phase-bar"><i></i></span>02 &nbsp; Push off</button><button class="phase-btn" data-phase="2" aria-pressed="false"><span class="phase-bar"><i></i></span>03 &nbsp; Flight</button><button class="phase-btn" data-phase="3" aria-pressed="false"><span class="phase-bar"><i></i></span>04 &nbsp; Land</button>
+          </div><span class="cycle-note" id="cycleNote">Slow-motion loop</span></div>
+          <div class="motion-scrubber"><label for="motionSlider">Movement</label><input id="motionSlider" type="range" min="0" max="1000" value="80" step="1" aria-label="Movement progress"><output id="motionTime" for="motionSlider">0.1 / 0.9 s</output></div>
+          <div class="playback-options"><label for="motionSpeed">Playback <select id="motionSpeed" aria-label="Animation playback speed"><option value="1" selected>1× · reference pace</option><option value="0.5">½× · slow</option><option value="0.25">¼× · study</option></select></label><a id="movementReference" href="https://www.youtube.com/shorts/BfN3Q6KsD5U" target="_blank" rel="noopener noreferrer">Watch the reference ↗</a></div><div class="sequence-progress" aria-hidden="true"><i id="sequenceProgress"></i></div>
+        </div>
+        <aside class="tissue-card" aria-label="Selected structure details">
+          <div class="section-top"><span class="eyebrow">02 &nbsp;/&nbsp; Follow the force</span><span class="section-counter" id="sectionCounter">01 / 05</span></div>
+          <div class="region-select" role="group" aria-label="Body structure">
+            <button class="region-btn" data-region="achilles" aria-pressed="true" aria-label="Achilles tendon"><svg viewBox="0 0 28 30" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m13 3-1 17 5 4 8 1v3H9l-2-4 2-10M9 3l-2 17"/><path d="m7 15-2 9 4 2" stroke-width="2.5"/></svg>Achilles</button>
+            <button class="region-btn" data-region="patellar" aria-pressed="false" aria-label="Patellar tendon at the knee"><svg viewBox="0 0 28 30" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m12 2 5 10-3 5-3 11M8 3l5 10-3 4-3 11"/><ellipse cx="18" cy="14" rx="2" ry="3"/><path d="m18 18-4 4" stroke-width="2.5"/></svg>Knee</button>
+            <button class="region-btn" data-region="tibia" aria-pressed="false" aria-label="Tibia, the shinbone"><svg viewBox="0 0 28 30" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 4q4-3 7 0l-2 6v13q4 5-2 4-6 1-3-4l1-13zM21 5l-2 20"/></svg>Shin</button>
+            <button class="region-btn" data-region="metatarsals" aria-pressed="false" aria-label="Metatarsal bones of the forefoot"><svg viewBox="0 0 28 30" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 3-1 14q1 5 7 7l13 2M10 3l-1 13 4 4"/><path d="m14 18 11 4m-13-2 12 4m-10-2 10 4" stroke-width="2"/></svg>Forefoot</button>
+            <button class="region-btn" data-region="fascia" aria-pressed="false" aria-label="Plantar fascia beneath the foot"><svg viewBox="0 0 28 30" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m9 3-1 14 7 5 10 2v3H5l-1-5 2-9M12 3l-1 12"/><path d="M6 25q8-5 17 0" stroke-width="2.5"/></svg>Arch</button>
+          </div>
+          <div class="tissue-heading"><div><h2 id="tissueTitle">Achilles tendon</h2><div class="tissue-type" id="tissueType">Ankle & heel · Tendon</div></div><span class="tissue-number" id="tissueNumber">01</span></div>
+          <p class="tissue-summary" id="tissueSummary"></p>
+          <div class="micro-panel"><div class="micro-label" id="microLabel">SCHEMATIC TISSUE VIEW · COLLAGEN FIBERS</div><svg class="micro-svg" id="microSvg" viewBox="0 0 350 100" role="img" aria-label="Schematic tissue loading, not a microscopic image"><g id="microDrawing"></g></svg><div class="micro-bottom"><span class="micro-state"><span class="dot"></span><span id="microState">Baseline</span></span><span class="micro-caption">Illustration, not a tissue scan</span></div></div>
+          <p id="jumpLoadNote" style="font-size:10px;line-height:1.6;color:#84738f;margin:0 0 17px"></p>
+          <div class="action-copy"><div><h3><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 9 9 3M3 3h6v6"/></svg> AT TAKEOFF</h3><p id="takeoffText"></p></div><div><h3><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" aria-hidden="true"><path d="m3 3 6 6M3 9h6V3"/></svg> ON LANDING</h3><p id="landingText"></p></div></div>
+          <div class="risk-note"><div class="eyebrow">When load outpaces recovery</div><h3 id="riskTitle"></h3><p id="riskText"></p></div>
+        </aside>
+      </div>
+    </section>
+    <section class="timeline" aria-labelledby="timelineTitle">
+      <div class="timeline-top"><div><div class="eyebrow">03 &nbsp;/&nbsp; The bigger picture</div><h2 id="timelineTitle">One jump is only part of the story.</h2><p>Move through a training block to see how repeated load and recovery interact.</p></div><div class="scenario-select" role="group" aria-label="Illustrative training scenario"><button data-scenario="balanced" aria-pressed="false"><span class="dot" style="color:var(--sage)"></span>With recovery</button><button data-scenario="overload" aria-pressed="true"><span class="dot" style="color:var(--purple)"></span>Load outpaces recovery</button></div></div>
+      <div class="timeline-body"><div class="chart-area"><div class="chart-heading"><span>ILLUSTRATIVE LOAD BALANCE</span><span class="chart-legend"><span><i></i>Load outpaces recovery</span><span><i></i>With recovery</span></span></div><svg class="chart" id="loadChart" viewBox="0 0 650 96" preserveAspectRatio="none" role="img" aria-label="Illustrative comparison of accumulating load with and without sufficient recovery"><defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#c1aedc" stop-opacity=".4"/><stop offset="1" stop-color="#c1aedc" stop-opacity=".03"/></linearGradient><clipPath id="chartClip"><rect id="chartReveal" x="0" y="0" width="0" height="80"/></clipPath></defs><path d="M8 15H642M8 43H642M8 71H642" fill="none" stroke="#efecf1" stroke-width="1"/><path id="chartArea" fill="url(#chartFill)" clip-path="url(#chartClip)"/><path id="overloadPath" fill="none" stroke="#aa94c7" stroke-width="2"/><path id="balancedPath" fill="none" stroke="#8eae9a" stroke-dasharray="4 4" stroke-width="1.6"/><path id="chartCursor" stroke="#c5b4d6" stroke-width="1" stroke-dasharray="3 3"/><circle id="chartDot" r="4" fill="#8b6ab6" stroke="#fff" stroke-width="2"/><g><text x="8" y="92">Week 0</text><text x="219" y="92" text-anchor="middle">4</text><text x="431" y="92" text-anchor="middle">8</text><text x="642" y="92" text-anchor="end">12</text></g></svg><div class="time-controls"><button class="timeline-play" id="timelineToggle" aria-label="Play cumulative timeline"></button><label for="weekSlider" class="week-label" id="weekLabel">Week 0</label><input type="range" id="weekSlider" min="0" max="12" step="0.1" value="0" aria-label="Training timeline, week" aria-describedby="timelineExplanation"><button class="reset" id="resetTimeline" aria-label="Reset timeline to week zero" title="Reset timeline"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8a7 7 0 1 1 1 7M3 3v5h5"/></svg></button></div></div>
+      <div class="timeline-summary"><div class="balance-heading">In this illustrative model</div><div class="balance-value" id="balanceValue">A fresh starting point</div><div class="balance-meter" role="img" id="balanceMeter" aria-label="Illustrative accumulated load: baseline"><i id="balanceBar"></i></div><p id="balanceText">Press play or move the slider. Watch the highlighted tissue change as loading accumulates.</p></div></div>
+      <p class="timeline-footnote" id="timelineExplanation"><span aria-hidden="true">ⓘ</span>Time is compressed. Colors show a conceptual loading pattern, not measured damage, injury probability, or a safe number of jumps. The two curves are illustrative scenarios.</p>
+    </section>
+    <section class="takeaway" aria-labelledby="takeawayTitle"><span class="takeaway-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 18c-4-9 4-13 13-13 0 9-4 17-12 13m-1 2L16 9"/></svg></span><div><h2 id="takeawayTitle">Movement builds strength. Recovery makes room for it.</h2><p>A jump is a load—not automatically an injury. Bones and tendons can adapt when training and recovery are balanced.</p></div><a href="#about" id="learnLink">Understand the model <svg style="display:inline-block;vertical-align:middle" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 9 9 3M3 3h6v6"/></svg></a></section>
+    <details class="learn" id="about"><summary>Behind the illustration & further reading</summary><div class="learn-grid"><div><h3>What you are seeing</h3><p>This is an anatomically informed model of a dancer. Sauté and échappé sauté are shown from the front; grand jeté is shown strictly from the side. It shows the pelvis, femur, patella, tibia, fibula, heel, midfoot, metatarsals, toe bones, Achilles tendon, patellar tendon, and plantar fascia. The transparent silhouette gives context; the diagrams are not to scale or intended for clinical measurement. The sauté uses a moderate, illustrative turnout from the hips, with knees tracking the feet. The front-facing sauté holds the legs long, with a modest natural gap and feet pointed down and slightly outward. The ankles keep their takeoff spacing throughout flight. The side-facing leaps show the forward split clearly. Dashed posterior tendons remain visible through the transparent anatomy. Bone contours and joint motion are simplified, not a clinical or motion-capture reconstruction.</p><p>The tissue inset shows the general arrangement of collagen fibers or bone architecture. It is a schematic anatomical illustration, not an atomic, molecular, or histologically exact image. Increasing color and fiber waviness represent an illustrative load imbalance; they do not establish that actual tissue damage has occurred.</p><h3>The traveling sequence</h3><p>Each grand jeté starts in plié, with a straight-leg brush and push-off into an extended split. The front foot receives the floor and the supporting knee immediately softens back into plié. That receiving leg launches the next leap, alternating sides without a connecting step and repeating until paused. The camera follows the dancer and moving floor marks show forward travel. Ballet terminology can differ between teaching traditions.</p><h3>Échappé sauté</h3><p>The model jumps from closed first to open second, lands into demi-plié, then jumps closed into first-position plié. Both feet take off and land together. The legs stay long during flight, while the arms open and close with the movement. On both landings, the knees bend as the heels lower; that plié leads directly into the next jump. The cycle includes only the opening and closing échappé sauté.</p><h3>How the timeline works</h3><p>The 12-week block compares two invented loading patterns. One includes recovery intervals; the other lets illustrative fatigue accumulate. The curves, time scale, and tissue responses are not fitted to clinical data. Selecting a jump changes the depicted movement and load distribution, not a clinically validated risk score. Scrubbing back resets the illustration; it does not reverse an injury.</p><p>Real injury risk also depends on training history, technique, floor, footwear, sleep, nutrition, bone health, and many other factors. Rest in this model is not a treatment plan. Actual tendon or bone injury can take much longer to recover.</p></div><div><h3>Movement references supplied for this study</h3><ul><li><a href="https://www.youtube.com/shorts/BfN3Q6KsD5U" target="_blank" rel="noopener noreferrer">Sauté reference · front view</a></li><li><a href="https://www.youtube.com/shorts/wJxC4voQNOE" target="_blank" rel="noopener noreferrer">Grand jeté reference</a></li><li><a href="https://www.youtube.com/watch?v=GPT1CcKAZfQ" target="_blank" rel="noopener noreferrer">Échappé sauté · airborne demonstration</a></li><li><a href="https://www.youtube.com/watch?v=ZvifI9cMydg" target="_blank" rel="noopener noreferrer">Échappé · position and arm reference</a></li><li><a href="https://www.youtube.com/shorts/KAgCeunOAQA" target="_blank" rel="noopener noreferrer">Échappé · second demonstration</a></li></ul><p>The references informed the timing and key poses: the sauté’s repeated rebound and rounded arms, the grand jeté’s straight-leg brush, airborne split, and open arms; and the échappé sauté’s opening and closing jumps with immediate receiving pliés. The pointe passages in the other échappé clips informed positions and arms; the new model uses the airborne sauté demonstration. These are hand-authored approximations of the visible demonstrations, not measured 3D motion capture.</p><h3>Further reading</h3><ul><li><a href="https://orthoinfo.aaos.org/en/diseases--conditions/achilles-tendinitis/" target="_blank" rel="noopener noreferrer">AAOS · Achilles tendinitis</a></li><li><a href="https://www.hopkinsmedicine.org/health/conditions-and-diseases/patellar-tendonitis-jumpers-knee" target="_blank" rel="noopener noreferrer">Johns Hopkins Medicine · Patellar tendonitis (jumper’s knee)</a></li><li><a href="https://orthoinfo.aaos.org/en/diseases--conditions/stress-fractures-of-the-foot-and-ankle/" target="_blank" rel="noopener noreferrer">AAOS · Stress fractures of the foot and ankle</a></li><li><a href="https://orthoinfo.aaos.org/en/diseases--conditions/plantar-fasciitis-and-bone-spurs/" target="_blank" rel="noopener noreferrer">AAOS · Plantar fasciitis and bone spurs</a></li></ul><p>The interactive experience works offline. External reading links need an internet connection.</p><h3>Overuse and acute injury are different</h3><p>This guide focuses on overuse mechanisms. An ankle sprain or a sudden tendon rupture is an acute event, not an inevitable endpoint of the timeline. Persistent focal pain, swelling, a sudden pop, or difficulty bearing weight warrants assessment by a qualified healthcare professional.</p><h3>Made for exploration</h3><p>Choose a movement: sauté and échappé use the front view, and grand jeté uses the side view. Pause at a stage, scrub the movement slider, and select a body structure. Use the timeline slider or its play button to compare loading patterns. All controls work with a keyboard. Animations start paused when your device requests reduced motion. Download the HTML and open it in a modern browser; there is nothing to install.</p></div></div></details>
+  </main>
+  <footer><span class="footer-brand">kinetic</span><span>A closer look at movement. An educational illustration, not medical advice.</span></footer>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+<noscript><p style="padding:20px;text-align:center">Enable JavaScript to explore the animation. The anatomy overview and further reading are still available above.</p></noscript>
+<script>
+'use strict';
+(() => {
+  const $ = id => document.getElementById(id);
+  // Save the pristine document: downloaded copies reopen at the initial state.
+  const downloadableHTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  const icons = {
+    play:'<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="m5 3 8 5-8 5z"/></svg>',
+    pause:'<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="4" y="3" width="3" height="10" rx=".8"/><rect x="9" y="3" width="3" height="10" rx=".8"/></svg>'
+  };
+  const regions = {
+    achilles:{name:'Achilles tendon',short:'Achilles tendon',type:'Ankle & heel · Tendon',kind:'tendon',summary:'The powerful connection between your calf muscles and your heel bone.',takeoff:'The calf pulls through the Achilles to lift the heel and help propel the body upward.',landing:'The calf–Achilles unit absorbs energy as the ankle bends and the heel lowers.',risk:'Achilles tendinopathy',riskText:'Repeated loading with insufficient recovery can contribute to pain, stiffness, and reduced tendon load tolerance.',number:'01',label:[411,383],labelWidth:115},
+    patellar:{name:'Patellar tendon',short:'Patellar tendon',type:'Knee · Tendon',kind:'tendon',summary:'A short, strong link from the kneecap to the upper shinbone, transmitting quadriceps force.',takeoff:'The quadriceps extend the knee through the patella and patellar tendon.',landing:'This system helps control knee flexion, slowing the body as it meets the floor.',risk:'Patellar tendinopathy',riskText:'Repeated high tendon loads may contribute to pain and reduced function, often just below the kneecap.',number:'02',label:[62,235],labelWidth:119},
+    tibia:{name:'Tibia',short:'Tibia · shinbone',type:'Lower leg · Bone',kind:'bone',summary:'The larger shinbone carries force between the knee and ankle; the slender fibula sits alongside it.',takeoff:'The tibia transfers force up the leg while resisting compression and bending.',landing:'Impact loads the shin as the hip, knee, and ankle work together to decelerate.',risk:'Tibial bone stress injury',riskText:'When loading repeatedly outpaces bone remodeling, stress reactions and, in some cases, stress fractures can develop.',number:'03',label:[420,324],labelWidth:123},
+    metatarsals:{name:'Metatarsal bones',short:'Metatarsals',type:'Forefoot · Bone',kind:'bone',summary:'The long bones behind the toes transmit force through the ball of the foot.',takeoff:'Force travels through the forefoot as the heel lifts and the toes leave the floor.',landing:'The forefoot receives load during a toe-to-heel landing, before load spreads through the foot.',risk:'Metatarsal bone stress injury',riskText:'Repetitive forefoot loading without enough recovery can contribute to bone stress injury in these small bones.',number:'04',label:[414,457],labelWidth:111},
+    fascia:{name:'Plantar fascia',short:'Plantar fascia',type:'Foot arch · Connective tissue',kind:'fascia',summary:'A strong band beneath the foot runs from the heel toward the toes, supporting the arch.',takeoff:'As the toes extend, the plantar fascia helps stiffen the arch for push-off.',landing:'The fascia is tensioned as the loaded arch deforms and distributes force.',risk:'Plantar fasciopathy',riskText:'Repeated tensile loading can contribute to plantar heel pain and changes in the fascia’s load tolerance.',number:'05',label:[76,436],labelWidth:110}
+  };
+  const jumpInfo = {
+    saute:{title:'Sauté in first position',description:'Demi-plié. Extend. Point. Land through the feet.',caption:'Sauté in turned-out first position: both feet take off and land together, with knees following the toes.'},
+    echappe:{title:'Échappé sauté',description:'Jump open to second. Plié. Jump closed to first.',caption:'Front-view échappé sauté: jump from first to second position, receive into demi-plié, then jump closed into first-position plié. Both knees stay long in flight, and both feet receive the floor together. Repeat continuously until paused.'},
+    jete:{title:'Grand jeté',description:'Plié. Push off. Split in flight. Land in plié.',caption:'Begin in plié, extend into a traveling grand jeté, and receive the floor into plié. Both legs stay long in flight. Each receiving leg launches the next leap, repeating until paused.'}
+  };
+  const jumpEffects = {
+    saute:{achilles:'In a sauté, both calf–Achilles units contribute to push-off and share the landing.',patellar:'In a sauté, both knee extensor systems help drive and decelerate the jump.',tibia:'In a sauté, two supporting legs distribute the landing load across both shins.',metatarsals:'In a sauté, both forefeet transfer force as the heels lift, then lower after contact.',fascia:'In a sauté, both arches are tensioned as the feet load and release.'},
+    echappe:{achilles:'Both calf–Achilles units help lift the body and control both landings as the heels lower.',patellar:'Both knee extensor systems drive each jump and control the return into plié in second and first.',tibia:'Both shins share support as the feet open to second and close to first.',metatarsals:'Both forefeet receive the floor together before the heels lower into plié.',fascia:'Both arches support the opening and closing landings as the feet return to the floor.'},
+    jete:{achilles:'In a grand jeté, one calf–Achilles unit launches the leap; the other helps receive it.',patellar:'In a grand jeté, takeoff and landing load opposite knee extensor systems in sequence.',tibia:'In a grand jeté, the takeoff and receiving shins bear load in sequence as the dancer travels.',metatarsals:'In a grand jeté, force shifts from the takeoff forefoot to the receiving forefoot.',fascia:'In a grand jeté, the takeoff arch stiffens for propulsion; the receiving arch supports impact.'}
+  };
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const state = {jump:'saute',view:'front',region:'achilles',scenario:'overload',week:0,phase:0.08,speed:1,motion:!reducedMotion.matches,timeline:false,lastTime:0,lastPhase:-1,repeatCount:0};
+  const duration={saute:.9,jete:1.8,echappe:1.8};
+  const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+  const mix=(a,b,t)=>a+(b-a)*t;
+  const smooth=t=>t*t*(3-2*t);
+  const point=(x,y)=>({x,y});
+  const lerpPoint=(a,b,t)=>point(mix(a.x,b.x,t),mix(a.y,b.y,t));
+  const fmt=n=>Number(n.toFixed(2));
+  function loadAt(week,scenario=state.scenario){
+    if(scenario==='balanced') return clamp(.055 + .09*(1-Math.exp(-week/2.5)) + .045*Math.sin(week*Math.PI/1.65)**2*(1-Math.exp(-week)),0,.22);
+    return .055+.82*(1-Math.exp(-Math.pow(week/8,1.55)));
+  }
+  function tissueLoad(key){
+    // Display weights are qualitative artistic choices, not biomedical coefficients.
+    const weights={echappe:{achilles:1,patellar:.94,tibia:.85,metatarsals:.92,fascia:.84},saute:{achilles:1,patellar:.94,tibia:.85,metatarsals:.92,fascia:.84},jete:{achilles:1.04,patellar:1.12,tibia:1.1,metatarsals:1.06,fascia:.98}};
+    return clamp(loadAt(state.week)*weights[state.jump][key]);
+  }
+  function updatePlayButtons(){
+    $('motionToggle').innerHTML=state.motion?icons.pause:icons.play;
+    $('motionToggle').setAttribute('aria-label',state.motion?'Pause jump animation':'Play jump animation');
+    $('timelineToggle').innerHTML=state.timeline?icons.pause:icons.play;
+    $('timelineToggle').setAttribute('aria-label',state.timeline?'Pause cumulative timeline':'Play cumulative timeline');
+  }
+  function selectRegion(key){
+    state.region=key;
+    const r=regions[key];
+    document.querySelectorAll('[data-region]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.region===key)));
+    $('tissueTitle').textContent=r.name;$('tissueType').textContent=r.type;$('tissueSummary').textContent=r.summary;
+    $('tissueNumber').textContent=r.number;$('sectionCounter').textContent=r.number+' / 05';
+    $('takeoffText').textContent=r.takeoff;$('landingText').textContent=r.landing;
+    $('riskTitle').textContent=r.risk;$('riskText').textContent=r.riskText;
+    $('jumpLoadNote').textContent=jumpEffects[state.jump][key];
+    $('microLabel').textContent='SCHEMATIC TISSUE VIEW · '+(r.kind==='bone'?'BONE ARCHITECTURE':'COLLAGEN FIBERS');
+    updateTimeline();draw();
+  }
+  // Each movement has a fixed projection of its 3D skeleton. Coordinates are lateral x,
+  // downward y, and forward z; all lengths and contacts are in world space.
+  const FLOOR=529, THIGH=111, SHIN=107, BALL=43, SOLE=22;
+  const V=(x=0,y=0,z=0)=>({x,y,z});
+  const add=(a,b)=>V(a.x+b.x,a.y+b.y,a.z+b.z);
+  const sub=(a,b)=>V(a.x-b.x,a.y-b.y,a.z-b.z);
+  const mul=(a,s)=>V(a.x*s,a.y*s,a.z*s);
+  const dot=(a,b)=>a.x*b.x+a.y*b.y+a.z*b.z;
+  const cross=(a,b)=>V(a.y*b.z-a.z*b.y,a.z*b.x-a.x*b.z,a.x*b.y-a.y*b.x);
+  const length=a=>Math.hypot(a.x,a.y,a.z);
+  const unit=a=>mul(a,1/(length(a)||1));
+  const blend=(a,b,t)=>add(a,mul(sub(b,a),t));
+  const radians=d=>d*Math.PI/180;
+  const heading=yaw=>V(Math.sin(yaw),0,Math.cos(yaw));
+  const phases={
+    saute:[{label:'Demi-plié',start:0,end:.22,at:.22,note:'Heels grounded · knees track the toes · arms softly rounded'},{label:'Push off',start:.22,end:.40,at:.36,note:'Extend both legs together · roll through the balls of the feet'},{label:'Flight',start:.40,end:.78,at:.59,note:'Long legs and pointed feet · tall torso · quiet, rounded arms'},{label:'Land',start:.78,end:1,at:.94,note:'Bend into plié as the feet meet the floor · let the heels lower'}],
+    echappe:[{label:'Plié',start:0,end:.11,at:.11,note:'Closed first · bend both knees over the toes'},{label:'Jump open',start:.11,end:.39,at:.30,note:'Push through both feet · open long legs into second'},{label:'Second plié',start:.39,end:.61,at:.60,note:'Land together in second · bend as the heels lower'},{label:'Jump close',start:.61,end:.89,at:.80,note:'Push through both feet · close long legs into first'},{label:'First plié',start:.89,end:1,at:.99,note:'Receive together in first · continue directly into plié'}],
+    jete:[{label:'Plié',start:0,end:.16,at:.12,note:'Soften into the supporting knee · prepare to lift'},{label:'Push off',start:.16,end:.30,at:.25,note:'Extend the supporting leg · brush the free leg forward'},{label:'Grand jeté',start:.30,end:.76,at:.53,note:'Lift into the split · keep both knees long and feet pointed'},{label:'Land in plié',start:.76,end:1,at:.96,note:'Receive through the front foot · soften directly into plié'}]
+  };
+  function movementPhases(){return phases[state.jump];}
+  function movementDuration(){return duration[state.jump];}
+  function motionPhase(t){return movementPhases().findIndex((p,i)=>t<p.end||i===movementPhases().length-1);}
+  function configurePhases(){
+    $('phaseTrack').style.gridTemplateColumns=`repeat(${movementPhases().length},minmax(0,1fr))`;
+    $('phaseTrack').innerHTML=movementPhases().map((p,i)=>`<button class="phase-btn" data-phase="${i}" aria-pressed="false"><span class="phase-bar"><i></i></span><span>${String(i+1).padStart(2,'0')} &nbsp; ${p.label}</span></button>`).join('');
+    $('phaseTrack').querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>{
+      state.motion=false;state.phase=movementPhases()[Number(button.dataset.phase)].at;
+      updatePlayButtons();draw();
+    }));
+    $('cycleNote').textContent={saute:'Continuous rebound',jete:'Plié → jeté → plié',echappe:'Open → close · repeat'}[state.jump];
+    $('movementReference').href={saute:'https://www.youtube.com/shorts/BfN3Q6KsD5U',jete:'https://www.youtube.com/shorts/wJxC4voQNOE',echappe:'https://www.youtube.com/watch?v=GPT1CcKAZfQ'}[state.jump];
+    state.lastPhase=-1;
+  }
+  function footOffset(pitch,yaw,f,d,w=0){
+    const h=heading(yaw),lateral=V(Math.cos(yaw),0,-Math.sin(yaw));
+    return add(add(mul(h,f*Math.cos(pitch)-d*Math.sin(pitch)),V(0,f*Math.sin(pitch)+d*Math.cos(pitch),0)),mul(lateral,w));
+  }
+  function footPoint3D(foot,f,d,w=0){
+    // The toe hinge keeps the toes on the floor as the heel rises. It relaxes
+    // smoothly during flight rather than snapping the toe segment at takeoff.
+    const offset=(forward,depth,width=0,angle=0)=>{
+      if(!foot.frame)return footOffset(foot.pitch+angle,foot.yaw,forward,depth,width);
+      const a=forward*Math.cos(angle)-depth*Math.sin(angle),b=forward*Math.sin(angle)+depth*Math.cos(angle);
+      return add(add(mul(foot.frame.forward,a),mul(foot.frame.depth,b)),mul(foot.frame.lateral,width));
+    };
+    if(f>BALL){
+      const ball=add(foot.ankle,offset(BALL,SOLE));
+      return add(ball,offset(f-BALL,d-SOLE,w,-foot.pitch*foot.toeFlat));
+    }
+    return add(foot.ankle,offset(f,d,w));
+  }
+  function footFromBall(ball,pitch,yaw){
+    const ankle=sub(ball,footOffset(pitch,yaw,BALL,SOLE));
+    const clearance=Math.max(0,FLOOR-ball.y);
+    return {ankle,pitch,yaw,toeFlat:1-smooth(clamp(clearance/32)),contact:clearance<.02,ball};
+  }
+  function alignAirborneFoot(leg){
+    const foot=leg.foot;
+    const lowest=Math.max(...[[-19,8,10],[-16,22,11],[0,-8,10],[20,6,11],[43,12,15],[43,22,15],[62,18,10],[62,22,10]].flatMap(([f,d,w])=>[-1,1].map(sign=>footPoint3D(foot,f,d,w*sign).y)));
+    // Release the floor hinge only after the whole foot clears the ground.
+    // Rotate the actual ankle-to-toe line onto the shin; the mesh's sole
+    // offset means its local forward axis alone is not the visible foot line.
+    const weight=smooth(clamp((FLOOR-lowest)/18));
+    if(weight===0)return;
+    const forward=footOffset(foot.pitch,foot.yaw,1,0),depth=footOffset(foot.pitch,foot.yaw,0,1),lateral=footOffset(foot.pitch,foot.yaw,0,0,1);
+    const toeLine=unit(add(mul(forward,62),mul(depth,22))),shin=unit(sub(leg.ankle,leg.knee));
+    const axis=unit(cross(toeLine,shin)),angle=Math.acos(clamp(dot(toeLine,shin),-1,1))*weight;
+    const rotate=v=>add(add(mul(v,Math.cos(angle)),mul(cross(axis,v),Math.sin(angle))),mul(axis,dot(axis,v)*(1-Math.cos(angle))));
+    foot.frame={forward:rotate(forward),lateral:rotate(lateral),depth:rotate(depth)};
+    foot.pointWeight=weight;
+    foot.toeFlat*=1-weight;
+    foot.ball=footPoint3D(foot,BALL,SOLE);
+  }
+  function solveLeg(hip,foot,side){
+    let delta=sub(foot.ankle,hip),distance=length(delta),u=unit(delta);
+    // Correct unreachable free-foot targets explicitly; never stretch a bone.
+    const reachable=clamp(distance,Math.abs(THIGH-SHIN)+.01,THIGH+SHIN-.02);
+    const correction=Math.abs(distance-reachable);
+    if(correction>.00001){foot.ankle=add(hip,mul(u,reachable));foot.ball=footPoint3D(foot,BALL,SOLE);distance=reachable;}
+    const lateral=V(Math.cos(foot.yaw),0,-Math.sin(foot.yaw));
+    let bend=cross(lateral,u);
+    if(length(bend)<.001)bend=sub(heading(foot.yaw),mul(u,dot(heading(foot.yaw),u)));
+    bend=unit(bend);const pole=bend;
+    const along=(THIGH*THIGH-SHIN*SHIN+distance*distance)/(2*distance);
+    const height=Math.sqrt(Math.max(0,THIGH*THIGH-along*along));
+    const knee=add(add(hip,mul(u,along)),mul(bend,height));
+    return {hip,knee,ankle:foot.ankle,foot,side,pole,correction};
+  }
+  function sautePose(t){
+    const yaw=radians(42),baseAnkle=V(13,507,0);
+    const plantedBall=add(baseAnkle,footOffset(0,yaw,BALL,SOLE));
+    const launchPitch=50;
+    const launchFoot=footFromBall(plantedBall,radians(launchPitch),yaw);
+    const straightHeight=f=>f.ankle.y-Math.sqrt(217.95**2-(f.ankle.x-18)**2-(f.ankle.z-12)**2);
+    const launchHeight=straightHeight(launchFoot);
+    const plieDepth=332-straightHeight(footFromBall(plantedBall,0,yaw));
+    let rootY,pitch,foot,flight=false;
+    // The landing continues across the loop seam into the next plié, as in
+    // the repeated jumps at approximately 6–12 seconds of the reference.
+    if(t<.22){pitch=0;foot=footFromBall(plantedBall,0,yaw);rootY=straightHeight(foot)+plieDepth*smooth((t+.22)/.44);}
+    else if(t<.40){const u=smooth((t-.22)/.18);rootY=mix(332,launchHeight,u);pitch=radians(launchPitch*u);foot=footFromBall(plantedBall,pitch,yaw);}
+    else if(t<.78){
+      const u=(t-.40)/.38,arc=4*u*(1-u);
+      // Match the supplied flight frame: long legs, a modest natural gap,
+      // and downward-pointed toes. The ankle lines never squeeze inward or
+      // spread outward in flight; only the body's height and foot point vary.
+      const point=smooth(clamp(u/.12))*(1-smooth(clamp((u-.90)/.10)));
+      rootY=launchHeight-54*arc;pitch=radians(launchPitch+15*point);flight=true;
+      const x=launchFoot.ankle.x,z=launchFoot.ankle.z;
+      const ankle=V(x,rootY+Math.sqrt(217.95**2-(x-18)**2-(z-12)**2),z);
+      foot=footFromBall(add(ankle,footOffset(pitch,yaw,BALL,SOLE)),pitch,yaw);
+    }else{
+      pitch=radians(launchPitch*(1-smooth(clamp((t-.78)/.18))));
+      foot=footFromBall(plantedBall,pitch,yaw);
+      // Receive the floor into plié immediately. Follow the rotating foot's
+      // ankle height, then add compression, so lowering the heel cannot
+      // trigger the reach constraint and straighten the knee again.
+      rootY=straightHeight(foot)+plieDepth*smooth((t-.78)/.44);
+    }
+    if(foot.contact){
+      const dx=foot.ankle.x-18,dz=foot.ankle.z-12;
+      rootY=Math.max(rootY,foot.ankle.y-Math.sqrt(217.95**2-dx*dx-dz*dz));
+    }
+    const root=V(0,rootY,12),leftBall=V(-foot.ball.x,foot.ball.y,foot.ball.z);
+    const leftFoot=footFromBall(leftBall,pitch,-yaw);
+    return {root,legs:{right:solveLeg(add(root,V(18,0,0)),foot,1),left:solveLeg(add(root,V(-18,0,0)),leftFoot,-1)},arm:clamp((332-rootY)/122),lean:0,flight,travel:0,t};
+  }
+  // Échappé sauté: one opening jump and one closing jump per cycle.
+  // Each landing continues into the next demi-plié without a straight-knee
+  // pause. The balls of the feet stay planted throughout heel lowering.
+  function echappePose(t){
+    const closing=t>=.5,u=closing?(t-.5)*2:t*2;
+    const start=closing?1:0,end=1-start,yaw=radians(60),reach=217.9,launchPitch=radians(50);
+    const flatOffset=footOffset(0,yaw,BALL,SOLE),launchOffset=footOffset(launchPitch,yaw,BALL,SOLE);
+    const baseAnkle=open=>V(mix(22,90,open),507,0);
+    const ballAt=(open,side)=>{
+      const a=baseAnkle(open);
+      return add(V(side*a.x,a.y,side*a.z),footOffset(0,side*yaw,BALL,SOLE));
+    };
+    const ground=(open,pitch,compression)=>{
+      const right=footFromBall(ballAt(open,1),pitch,yaw),left=footFromBall(ballAt(open,-1),pitch,-yaw);
+      // Both heels rotate forward together. Follow that common ankle shift
+      // in depth to keep equal reach in the two straight legs.
+      const rootZ=flatOffset.z-footOffset(pitch,yaw,BALL,SOLE).z;
+      const straightY=right.ankle.y-Math.sqrt(reach**2-(right.ankle.x-18)**2-(right.ankle.z-rootZ)**2);
+      return {root:V(0,straightY+compression,rootZ),left,right};
+    };
+    const depth=open=>mix(42,52,open);
+    let pose,flight=false,openness=start;
+    if(u<.22){
+      pose=ground(start,0,depth(start)*smooth((u+.22)/.44));
+    }else if(u<.40){
+      const lift=smooth((u-.22)/.18);
+      pose=ground(start,launchPitch*lift,depth(start)*(1-lift));
+    }else if(u<.78){
+      const air=(u-.40)/.38,spread=smooth(air);
+      openness=mix(start,end,spread);flight=true;
+      const a=ground(start,launchPitch,0),b=ground(end,launchPitch,0);
+      const root=V(0,mix(a.root.y,b.root.y,spread)-54*4*air*(1-air),a.root.z);
+      const point=smooth(clamp(air/.12))*(1-smooth(clamp((air-.90)/.10)));
+      const pitch=launchPitch+radians(15)*point;
+      const x=mix(22,90,openness)+flatOffset.x-launchOffset.x,z=0;
+      const ankleY=root.y+Math.sqrt(reach**2-(x-18)**2-z*z);
+      const freeFoot=side=>{
+        const ankle=V(side*x,ankleY,root.z+side*z);
+        return footFromBall(add(ankle,footOffset(pitch,side*yaw,BALL,SOLE)),pitch,side*yaw);
+      };
+      pose={root,left:freeFoot(-1),right:freeFoot(1)};
+    }else{
+      openness=end;
+      const pitch=launchPitch*(1-smooth(clamp((u-.78)/.18)));
+      // Compression is measured from the current straight-leg height, so
+      // lowering the heel cannot reach-clamp the knee back to straight.
+      pose=ground(end,pitch,depth(end)*smooth((u-.78)/.44));
+    }
+    const {root,left,right}=pose;
+    const legs={left:solveLeg(add(root,V(-18,0,0)),left,-1),right:solveLeg(add(root,V(18,0,0)),right,1)};
+    if(flight)Object.values(legs).forEach(alignAirborneFoot);
+    const armKeys=[[0,32,-38,28],[.11,32,-38,28],[.20,40,-104,65],[.32,132,-120,20],[.61,132,-120,20],[.70,80,-100,40],[.82,35,-50,30],[1,32,-38,28]];
+    const arms=[1,2,3].map(i=>track(armKeys.map(k=>[k[0],k[i]]),t));
+    return {root,legs,armPose:[...arms,-arms[0],arms[1],arms[2]],arm:0,lean:0,flight,openness,travel:0,t};
+  }
+
+  // Shape-preserving cubic interpolation avoids overshooting floor contacts,
+  // reversals of travel, and pauses at every intermediate animation keyframe.
+  function track(keys,t){
+    let i=0;while(i<keys.length-2&&t>keys[i+1][0])i++;
+    const [a,va]=keys[i],[b,vb]=keys[i+1],s=clamp((t-a)/(b-a)),h=b-a;
+    function tangent(j){
+      if(j===0||j===keys.length-1)return 0;
+      const h0=keys[j][0]-keys[j-1][0],h1=keys[j+1][0]-keys[j][0];
+      const d0=(keys[j][1]-keys[j-1][1])/h0,d1=(keys[j+1][1]-keys[j][1])/h1;
+      if(d0*d1<=0)return 0;
+      const w0=2*h1+h0,w1=h1+2*h0;return (w0+w1)/(w0/d0+w1/d1);
+    }
+    return (2*s**3-3*s*s+1)*va+(s**3-2*s*s+s)*h*tangent(i)+(-2*s**3+3*s*s)*vb+(s**3-s*s)*h*tangent(i+1);
+  }
+  // One leap per cycle: plié, push off, straight split, and receiving plié.
+  // The receiving leg launches the next leap, so no connecting step is needed.
+  function grandJetePose(t,cycle=0){
+    const yaw=radians(12),reach=217.9,stride=300,launch=.30,land=.76;
+    const hermite=(a,b,da,db,u,span)=>(2*u**3-3*u*u+1)*a+(u**3-2*u*u+u)*da*span+(-2*u**3+3*u*u)*b+(u**3-u*u)*db*span;
+    const supportFoot=(side,z,pitch)=>footFromBall(V(side*27,FLOOR,z),radians(pitch),side*yaw);
+    const hipAt=(root,side)=>add(root,V(side*18,0,0));
+    const straightY=(foot,z,side)=>foot.ankle.y-Math.sqrt(reach**2-(foot.ankle.x-side*18)**2-(foot.ankle.z-z)**2);
+    const takeoffFoot=supportFoot(-1,20,60),receivingFoot=supportFoot(1,stride+20,60);
+    const startZ=40,endZ=260,flightSpan=land-launch,rise=118;
+    const startY=straightY(takeoffFoot,startZ,-1),endY=straightY(receivingFoot,endZ,1);
+    const speedZ=(endZ-startZ)/flightSpan;
+    const speedY=(endY-startY-4*rise)/flightSpan;
+    const trailingAngle=Math.asin((takeoffFoot.ankle.z-startZ)/Math.sqrt(reach**2-(takeoffFoot.ankle.x+18)**2))*180/Math.PI;
+    const receivingAngle=Math.asin((receivingFoot.ankle.z-endZ)/Math.sqrt(reach**2-(receivingFoot.ankle.x-18)**2))*180/Math.PI;
+    let root,left,right;
+    const lowest=foot=>Math.max(...[[-19,8],[-16,22],[0,-8],[20,6],[43,12],[43,22],[62,18],[62,22]].map(([f,d])=>footPoint3D(foot,f,d).y));
+    const longFoot=(side,angle,pitch)=>{
+      const offset=footOffset(radians(pitch),side*yaw,BALL,SOLE),x=side*27-offset.x;
+      const radius=Math.sqrt(reach**2-(x-side*18)**2),a=radians(angle);
+      const ankle=V(x,root.y+radius*Math.cos(a),root.z+radius*Math.sin(a));
+      const foot=footFromBall(add(ankle,offset),radians(pitch),side*yaw);
+      // A free foot can brush the floor during preparation; only the loaded
+      // support is marked as a planted contact. In flight both knees stay long.
+      if(t<launch){
+        // Ease out of the floor brush so the knee does not snap straight
+        // at the exact frame when the pointed foot clears the ground.
+        const clearance=lowest(foot)-FLOOR,pad=4;
+        const lift=clearance>=pad?clearance:clearance<=-pad?0:(clearance+pad)**2/(4*pad);
+        foot.ankle.y-=lift;foot.ball=footPoint3D(foot,BALL,SOLE);
+        foot.toeFlat=1-smooth(clamp((FLOOR-foot.ball.y)/32));
+      }
+      foot.contact=false;return foot;
+    };
+    if(t<.16){
+      const u=t/.16;
+      root=V(0,mix(325,334,smooth(u)),hermite(0,8,0,100,u,.16));
+      left=supportFoot(-1,20,0);right=longFoot(1,mix(-50,-55,smooth(u)),110);
+    }else if(t<launch){
+      const u=(t-.16)/(launch-.16);
+      root=V(0,hermite(334,startY,0,speedY,u,.14),hermite(8,startZ,100,speedZ,u,.14));
+      left=supportFoot(-1,20,60*smooth(u));
+      right=longFoot(1,mix(-55,65,smooth(u)),mix(110,20,smooth(u)));
+    }else if(t<land){
+      const u=(t-launch)/flightSpan;
+      root=V(0,mix(startY,endY,u)-4*rise*u*(1-u),mix(startZ,endZ,u));
+      const lead=u<.5?mix(65,90,smooth(u*2)):mix(90,receivingAngle,smooth((u-.5)*2));
+      const trail=u<.5?mix(trailingAngle,-90,smooth(u*2)):mix(-90,-50,smooth((u-.5)*2));
+      right=longFoot(1,lead,u<.5?mix(20,0,smooth(u*2)):mix(0,60,smooth((u-.5)*2)));
+      left=longFoot(-1,trail,u<.5?mix(60,160,smooth(u*2)):mix(160,110,smooth((u-.5)*2)));
+    }else{
+      const u=(t-land)/(1-land);
+      root=V(0,hermite(endY,325,400,0,u,.24),hermite(endZ,stride,speedZ,0,u,.24));
+      right=supportFoot(1,stride+20,60*(1-smooth(u)));
+      left=longFoot(-1,-50,110);
+    }
+    const legs={left:solveLeg(hipAt(root,-1),left,-1),right:solveLeg(hipAt(root,1),right,1)};
+    const armKeys=[
+      [0,50,-75,40,-50,-75,40],[.16,50,-75,40,-50,-75,40],
+      [.30,38,-125,85,-80,-125,-30],[.53,32,-178,88,-95,-160,-35],
+      [.76,70,-94,25,-80,-94,-15],[1,50,-75,40,-50,-75,40]
+    ];
+    let armPose=Array.from({length:6},(_,i)=>track(armKeys.map(f=>[f[0],f[i+1]]),t));
+    // Reflect left/right on alternate cycles, preserving the actual joints
+    // at the seam while the dancer continues forward in world space.
+    const parity=cycle%2?-1:1,offset=cycle*stride;
+    root.z+=offset;
+    for(const leg of Object.values(legs)){
+      for(const p of [leg.hip,leg.knee,leg.ankle,leg.foot.ball]){p.x*=parity;p.z+=offset;}
+      leg.side*=parity;leg.pole.x*=parity;leg.foot.yaw*=parity;
+    }
+    if(parity<0){[legs.left,legs.right]=[legs.right,legs.left];armPose=[-armPose[3],armPose[4],armPose[5],-armPose[0],armPose[1],armPose[2]];}
+    return {root,legs,armPose,arm:0,lean:0,flight:t>=launch&&t<land,travel:.5,t,cyclePhase:t};
+  }
+  function poseAt(t){const p=state.jump==='saute'?sautePose(t):state.jump==='echappe'?echappePose(t):grandJetePose(t,state.repeatCount);p.phase=motionPhase(t);return p;}
+
+  function project(v,p){
+    const scale=state.jump==='jete'?.72:.80;
+    const cameraZ=state.jump==='saute'?12:p.root.z-(-85+170*p.travel);
+    return point(310+scale*(state.view==='side'?v.z-cameraZ:v.x),FLOOR+scale*(v.y-FLOOR));
+  }
+  function transform(a,b){return `translate(${fmt(a.x)} ${fmt(a.y)}) rotate(${fmt(Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI-90)})`;}
+  function boneBetween(a,b,p,width=5,attrs=''){
+    const A=project(a,p),B=project(b,p),l=Math.hypot(B.x-A.x,B.y-A.y);
+    if(l<18)return `<ellipse ${attrs} class="bone" cx="${fmt((A.x+B.x)/2)}" cy="${fmt((A.y+B.y)/2)}" rx="${width}" ry="${Math.max(width,l/2)}"/>`;
+    return `<g transform="${transform(A,B)}"><path ${attrs} class="bone" d="M-${width} 4Q-${width+3} 0 0 0Q${width+3} 0 ${width} 5L${width*.52} ${fmt(l-9)}Q${width+3} ${fmt(l)} 0 ${fmt(l)}Q-${width+3} ${fmt(l)}-${width*.52} ${fmt(l-9)}Z"/><path class="bone-line" d="M0 10V${fmt(l-11)}"/></g>`;
+  }
+  function strokeWorld(points,p,color,width,extra=''){
+    return `<path d="${points.map((v,i)=>{const a=project(v,p);return (i?'L':'M')+fmt(a.x)+' '+fmt(a.y);}).join('')}" fill="none" stroke="${color}" stroke-width="${width}" stroke-linecap="round" stroke-linejoin="round" ${extra}/>`;
+  }
+  function glowWorld(key,center,p,rx,ry,visible=true){
+    const c=project(center,p),opacity=(.10+tissueLoad(key)*.75)*(visible?1:.5);
+    return `<ellipse cx="${fmt(c.x)}" cy="${fmt(c.y)}" rx="${rx}" ry="${ry}" fill="url(#targetGlow)" opacity="${fmt(opacity)}"/>`;
+  }
+  function hull(points){
+    const a=points.slice().sort((p,q)=>p.x-q.x||p.y-q.y),cross=(o,p,q)=>(p.x-o.x)*(q.y-o.y)-(p.y-o.y)*(q.x-o.x);
+    const lower=[],upper=[];for(const p of a){while(lower.length>=2&&cross(lower.at(-2),lower.at(-1),p)<=0)lower.pop();lower.push(p);}
+    for(const p of a.slice().reverse()){while(upper.length>=2&&cross(upper.at(-2),upper.at(-1),p)<=0)upper.pop();upper.push(p);}
+    return lower.slice(0,-1).concat(upper.slice(0,-1));
+  }
+  function footMarkup(leg,p){
+    const foot=leg.foot,toWorld=(f,d,w=0)=>footPoint3D(foot,f,d,w);
+    const outline=[];for(const [f,d,w] of [[-19,8,10],[-16,22,11],[0,-8,10],[20,6,11],[43,12,15],[43,22,15],[62,18,10],[62,22,10]])for(const side of [-1,1])outline.push(project(toWorld(f,d,w*side),p));
+    let s=`<polygon class="body-outline" points="${hull(outline).map(a=>fmt(a.x)+','+fmt(a.y)).join(' ')}"/>`;
+    for(const [f,d,w] of [[-9,13,7],[0,1,6],[13,9,6],[23,12,5]])s+=boneBetween(toWorld(f-5,d,-w),toWorld(f+5,d,w),p,3.5);
+    for(let i=0;i<5;i++){
+      const lateral=(i-2)*5,start=toWorld(23,12,lateral*.55),end=toWorld(43,16,lateral);
+      s+=boneBetween(start,end,p,1.5,'data-bone="metatarsal"');
+      const bigToe=i===(leg.side>0?0:4),segments=bigToe?2:3,tip=bigToe?61:59-Math.abs(i-2);
+      for(let k=0;k<segments;k++)s+=boneBetween(toWorld(mix(45,tip,k/segments),17,lateral),toWorld(mix(45,tip,(k+1)/segments)-.7,17,lateral),p,1.1);
+    }
+    s+=strokeWorld([toWorld(-13,21),toWorld(13,19),toWorld(43,22)],p,state.region==='fascia'?'#9674b1':'#b99d87',2,state.view==='front'?'stroke-dasharray="3 2"':'');
+    s+=glowWorld('metatarsals',toWorld(35,15),p,22,15)+glowWorld('fascia',toWorld(13,21),p,24,12);
+    return s;
+  }
+  function legAnchors(leg){
+    const shin=unit(sub(leg.ankle,leg.knee)),lateral=V(Math.cos(leg.foot.yaw),0,-Math.sin(leg.foot.yaw));
+    const anterior=unit(cross(lateral,shin)),thighAnterior=unit(cross(lateral,unit(sub(leg.knee,leg.hip))));
+    const patella=add(leg.knee,mul(anterior,10));
+    const patellarEnd=add(add(leg.knee,mul(shin,28)),mul(anterior,5));
+    const calf=sub(blend(leg.knee,leg.ankle,.54),mul(anterior,15));
+    const heel=footPoint3D(leg.foot,-15,11),rear=sub(blend(leg.knee,leg.ankle,.9),mul(anterior,13));
+    return {shin,lateral,anterior,thighAnterior,patella,patellarStart:add(patella,mul(shin,6)),patellarEnd,calf,rear,heel,patellar:blend(patella,patellarEnd,.55),tibia:blend(leg.knee,leg.ankle,.54),achilles:blend(calf,heel,.68),metatarsals:footPoint3D(leg.foot,35,15),fascia:footPoint3D(leg.foot,13,21)};
+  }
+  function legMarkup(leg,p){
+    const a=legAnchors(leg),far=leg.side<0,opacity=state.view==='side'&&far?.44:1;
+    let s=`<g data-leg="${far?'left':'right'}" opacity="${opacity}">`;
+    s+=strokeWorld([leg.hip,leg.knee,leg.ankle],p,'#d7cfdf',26,'stroke-opacity=".55"');
+    s+=boneBetween(leg.hip,leg.knee,p,5.5,'data-bone="femur"');
+    s+=boneBetween(leg.knee,leg.ankle,p,4.5,'data-bone="tibia"');
+    const fibOffset=sub(mul(a.lateral,leg.side*10),mul(a.anterior,6));
+    s+=boneBetween(add(blend(leg.knee,leg.ankle,.12),fibOffset),add(leg.ankle,add(fibOffset,V(0,3,0))),p,2,'data-bone="fibula"');
+    s+=boneBetween(sub(a.patella,mul(a.shin,5)),add(a.patella,mul(a.shin,5)),p,4,'data-bone="patella"');
+    s+=strokeWorld([add(blend(leg.hip,leg.knee,.62),mul(a.thighAnterior,9)),a.patella],p,'#c4ad9a',2);
+    s+=strokeWorld([a.patellarStart,a.patellarEnd],p,state.region==='patellar'?'#9674b1':'#b99d87',3.4);
+    s+=glowWorld('patellar',a.patellar,p,21,24)+glowWorld('tibia',a.tibia,p,19,35);
+    s+=strokeWorld([blend(leg.knee,leg.ankle,.25),blend(leg.knee,leg.ankle,.85)],p,'#b178a0',4,`opacity="${fmt(tissueLoad('tibia')*.50)}"`);
+    s+=footMarkup(leg,p);
+    const A=project(a.calf,p),B=project(a.rear,p),C=project(a.heel,p);
+    const path=`M${fmt(A.x)} ${fmt(A.y)}Q${fmt(B.x)} ${fmt(B.y)} ${fmt(C.x)} ${fmt(C.y)}`;
+    s+=`<path data-tendon="achilles" d="${path}" fill="none" stroke="${state.region==='achilles'?'#9674b1':'#b99d87'}" stroke-width="3.5" stroke-linecap="round" ${state.view==='front'?'stroke-dasharray="3 2"':''}/>`;
+    s+=glowWorld('achilles',a.achilles,p,19,25);
+    s+=`<path d="${path}" fill="none" stroke="#b5739d" stroke-width="4" opacity="${fmt(tissueLoad('achilles')*.55)}" ${state.view==='front'?'stroke-dasharray="3 2"':''}/>`;
+    return s+'</g>';
+  }
+  // Wrist paths follow the demonstrated port de bras: gather for the chassé,
+  // sweep forward for the first leap, present, then open for the grand jeté.
+  // Arms stay below/alongside the head rather than rising into fifth position.
+  const leapArmFrames=[
+    [0,35,-110,75, -35,-110,75],
+    [.10,48,-100,55, -48,-100,55],
+    [.15,65,-65,-10, -65,-65,-10],
+    [.19,32,-115,80, -38,-115,75],
+    [.245,32,-185,92, -65,-150,90],
+    [.30,55,-95,55, -90,-95,-20],
+    [.36,75,-70,12, -75,-70,-12],
+    [.42,75,-150,60, -108,-140,-20],
+    [.55,75,-150,60, -108,-140,-20],
+    [.65,38,-110,78, -38,-110,78],
+    [.74,40,-110,75, -40,-110,75],
+    [.80,65,-65,-12, -65,-65,-12],
+    [.85,45,-125,88, -85,-135,-25],
+    [.90,32,-178,88, -95,-160,-35],
+    [.96,80,-94,22, -86,-94,-15],
+    [1,65,-65,12, -65,-65,-10]
+  ];
+  const leapArmTracks=Array.from({length:6},(_,i)=>leapArmFrames.map(f=>[f[0],f[i+1]]));
+  function armJoints(p,side){
+    const shoulder=add(p.root,V(side*28,-134,0));
+    const q=state.jump==='saute'?null:(p.armPose||leapArmTracks.map(keys=>track(keys,p.t)));
+    let wrist=q?add(p.root,side>0?V(q[0],q[1],q[2]):V(q[3],q[4],q[5])):add(p.root,V(side*mix(27,30,p.arm),mix(-28,-31,p.arm),mix(20,24,p.arm)));
+    const direction=unit(sub(wrist,shoulder)),distance=clamp(length(sub(wrist,shoulder)),12.01,117.9);
+    wrist=add(shoulder,mul(direction,distance));
+    const along=(65*65-53*53+distance*distance)/(2*distance);
+    const outward=V(side,0,-.2),bend=unit(sub(outward,mul(direction,dot(outward,direction))));
+    const elbow=add(add(shoulder,mul(direction,along)),mul(bend,Math.sqrt(Math.max(0,65*65-along*along))));
+    return {shoulder,elbow,wrist};
+  }
+  function upperMarkup(p){
+    const c=project(p.root,p),scale=state.jump==='jete'?.72:.8,front=state.view==='front';
+    let s=`<g transform="translate(${fmt(c.x)} ${fmt(c.y)}) scale(${scale})">`;
+    if(front){
+      s+='<path class="body-outline" d="M-25 9Q-42-14-29-44L-34-101Q-49-125-27-139L-11-146 11-146 27-139Q49-125 34-101L29-44Q42-14 25 9Z"/>';
+      s+='<path class="bone" d="M-3-26Q-20-48-35-31L-31-11Q-24 5-13 7L0-9 13 7Q24 5 31-11L35-31Q20-48 3-26L0-17Z"/><path class="bone" d="m-5-26 10 0 4 15-9 13-9-13Z"/>';
+      s+='<path d="M0-27V-144" stroke="#aa9dbd" stroke-width="6"/>';
+      for(let y=-139;y<-28;y+=8)s+=`<path d="M-5 ${y}H5" stroke="#f6f3fa" stroke-width="2"/>`;
+      for(let i=0;i<8;i++){const y=-131+i*7,w=24+Math.sin(i/8*Math.PI)*12;for(const sign of [-1,1])s+=`<path d="M0 ${y}Q${sign*w} ${y-8} ${sign*w} ${y+2}Q${sign*(w-8)} ${y+16} 0 ${y+9}" fill="none" stroke="#b0a2c0" stroke-width="1.5"/>`;}
+      s+='<path class="bone-line" d="M0-133v40M-28-136Q-12-142 0-136Q12-142 28-136"/><path class="bone" d="M-5-146v-13h10v13Z"/><path class="body-outline" d="M-13-155Q-29-166-24-189Q-21-207 0-208Q21-207 24-189Q29-166 13-155Z"/><path class="bone" d="M-12-158Q-23-166-20-188Q-16-201 0-201Q16-201 20-188Q23-166 12-158Z"/><path class="bone-line" d="M-15-183q6-5 11 0m8 0q5-5 11 0M0-181l-3 9h6m-12 8h18"/>';
+    }else{
+      s+='<path class="body-outline" d="M-17 8Q-33-13-25-44L-31-111Q-36-131-20-139L-11-149 8-150 20-136Q35-130 29-112L19-54Q15-30 25-4L13 13Z"/><path class="bone" d="M-3-25Q-14-43-28-30L-25-12Q-17 2-8 5L0-9 8 5Q22 0 26-17L25-31Q11-41 4-25L0-15Z"/><path class="bone" d="m-5-24 8 0 5 14-9 12-7-12Z"/><path fill="none" stroke="#aa9dbd" stroke-width="5" d="M0-25Q-10-62-6-84L-9-137"/>';
+      for(let y=-129;y<-27;y+=8)s+=`<path d="M-12 ${y}h10" stroke="#f6f3fa" stroke-width="2"/>`;
+      for(let i=0;i<7;i++){const y=-126+i*7,w=16+Math.sin(i/7*Math.PI)*9;s+=`<path d="M-8 ${y}Q${w+13} ${y-6} ${w} ${y+7}Q7 ${y+20}-5 ${y+9}" fill="none" stroke="#b0a2c0" stroke-width="1.5"/>`;}
+      s+='<path class="bone-line" d="M19-125 22-95M-9-136 18-132"/><path class="bone" d="M-7-149v-10h9v11Z"/><path class="body-outline" d="M-14-154Q-30-166-23-189Q-20-207-1-207Q20-204 20-186L25-179 20-176 19-165Q15-152 4-154Z"/><path class="bone" d="M-12-158Q-26-169-19-189Q-14-201 0-200Q14-199 15-185L21-179 15-176 14-167 4-163 4-157Z"/><path class="bone-line" d="M15-184h-5m5 14-8 1m-4-25q-11 5-9 18"/>';
+    }
+    s+='</g>';
+    for(const side of [-1,1]){
+      const {shoulder,elbow,wrist}=armJoints(p,side);
+      s+=strokeWorld([shoulder,elbow,wrist],p,'#d5ccdf',14,`opacity="${!front&&side<0?.35:.65}"`);
+      s+=boneBetween(shoulder,elbow,p,3)+boneBetween(elbow,wrist,p,2.3);
+      s+=strokeWorld([wrist,add(wrist,V(side*(state.jump==='saute'?-6:6),state.jump==='jete'?-4:3,6))],p,'#b0a2c0',3);
+    }
+    return s;
+  }
+  function labelPosition(key){return state.view==='side'&&key==='patellar'?[62,170]:regions[key].label;}
+  function buildLabels(){
+    $('anatomyLabels').innerHTML=Object.entries(regions).map(([key,r])=>{
+      const [x,y]=labelPosition(key);return `<g class="hotspot" data-label-region="${key}" role="button" tabindex="0" aria-label="Explore ${r.name}" aria-pressed="${key===state.region}"><path class="leader" id="leader-${key}"/><circle class="target-dot" id="dot-${key}" r="4"/><rect class="labelbox" x="${x}" y="${y}" width="${r.labelWidth}" height="28" rx="7"/><text class="labeltext" x="${x+11}" y="${y+17.5}">${r.short}</text></g>`;
+    }).join('');
+    document.querySelectorAll('[data-label-region]').forEach(el=>{
+      el.addEventListener('click',()=>selectRegion(el.dataset.labelRegion));
+      el.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();selectRegion(el.dataset.labelRegion);}});
+    });
+  }
+  function configureView(){
+    const view=state.jump==='jete'?'side':'front';
+    state.view=view;
+    buildLabels();
+    $('anatomyTitle').textContent=`Dance jump anatomy, ${view} view`;
+    $('viewCaption').textContent=view.toUpperCase()+' VIEW · TRANSPARENT ANATOMY';
+    $('viewExplanation').textContent={saute:'Front view · first position, with long legs and a natural gap in flight.',jete:'Side view · plié into grand jeté, then land in plié.',echappe:'Front view · first → second → first, with plié at each landing.'}[state.jump];
+    draw();
+  }
+  function draw(){
+    const p=poseAt(state.phase),right=p.legs.right,left=p.legs.left;
+    $('nearLeg').innerHTML=legMarkup(right,p);$('farLeg').innerHTML=legMarkup(left,p);$('upperBody').innerHTML=upperMarkup(p);
+    const anchors=legAnchors(right);
+    Object.entries(regions).forEach(([key,r])=>{
+      const a=project(anchors[key],p),[x,y]=labelPosition(key),start=point(x<310?x+r.labelWidth:x,y+14),elbow=x<310?start.x+18:start.x-18;
+      $('leader-'+key).setAttribute('d',`M${start.x} ${start.y}L${elbow} ${start.y}L${fmt(a.x)} ${fmt(a.y)}`);
+      $('dot-'+key).setAttribute('cx',fmt(a.x));$('dot-'+key).setAttribute('cy',fmt(a.y));
+      document.querySelector(`[data-label-region="${key}"]`).setAttribute('aria-pressed',String(key===state.region));
+    });
+    const center=project(V(0,FLOOR,p.root.z),p),clearance=Math.max(0,Math.min(FLOOR-right.foot.ball.y,FLOOR-left.foot.ball.y));
+    $('floorShadow').setAttribute('cx',fmt(center.x));$('floorShadow').setAttribute('rx',fmt(59-clamp(clearance/220)*24));$('floorShadow').setAttribute('opacity',fmt(.30-clamp(clearance/220)*.17));
+    const landings={saute:[.78],jete:[.76],echappe:[.39,.89]}[state.jump];
+    const pulse=landings.reduce((value,start)=>Math.max(value,state.phase>start&&state.phase<start+.08?Math.sin((state.phase-start)/.08*Math.PI):0),0);
+    $('impactRing').setAttribute('cx',fmt(center.x));$('impactRing').setAttribute('opacity',fmt(pulse*.6));$('impactRing').setAttribute('rx',fmt(43+pulse*24));
+    let ticks='';if(state.view==='side'&&state.jump==='jete')for(let z=Math.floor(p.root.z/100)*100-500;z<=p.root.z+500;z+=100){const a=project(V(0,FLOOR,z),p);if(a.x>135&&a.x<485)ticks+=`<path d="M${fmt(a.x)} 530v5" stroke="#d2c9df"/>`;}
+    $('floorTicks').innerHTML=ticks;
+    if(p.phase!==state.lastPhase){
+      document.querySelectorAll('[data-phase]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.phase)===p.phase)));
+      $('phaseNote').textContent=movementPhases()[p.phase].note;state.lastPhase=p.phase;
+    }
+    document.querySelectorAll('.phase-bar i').forEach((el,i)=>{const phase=movementPhases()[i];el.style.width=clamp((state.phase-phase.start)/(phase.end-phase.start))*100+'%';});
+    $('motionSlider').value=Math.round(state.phase*1000);
+    $('motionSlider').setAttribute('aria-valuetext',movementPhases()[p.phase].label+', '+Math.round(state.phase*100)+' percent through movement');
+    const seconds=state.phase*movementDuration();
+    $('motionTime').textContent=seconds.toFixed(1)+' / '+movementDuration().toFixed(1)+' s';
+    $('sequenceProgress').style.width=state.phase*100+'%';
+  }
+
+  function drawMicro(){
+    const r=regions[state.region],load=tissueLoad(state.region),w=350,h=100;
+    const tint=load>.42?'#b580a0':'#a597bd';
+    let svg='';
+    if(r.kind==='bone'){
+      svg+=`<path d="M-5 37Q130 27 355 38L355 84Q180 91-5 82Z" fill="#ebe5f1" stroke="#c7b8d4" stroke-width="2"/>`;
+      for(let i=0;i<17;i++){
+        const x=i*23-8,peak=42+Math.sin(i*2)*5;
+        svg+=`<path d="M${x} 77L${x+12} ${peak}L${x+27} 79M${x+6} 60L${x+30} 57" fill="none" stroke="${tint}" stroke-width="${2.4+load}" opacity=".6"/>`;
+      }
+      svg+='<path d="M-5 37Q130 27 355 38M-5 82Q180 91 355 84" fill="none" stroke="#baa9cb" stroke-width="5"/>';
+      for(let i=0;i<7;i++)svg+=`<ellipse cx="${34+i*46}" cy="${52+(i%3)*7}" rx="${7+load*9}" ry="${6+load*5}" fill="#b67b9b" opacity="${fmt(Math.max(0,load-.12)*.4)}"/>`;
+    }else{
+      const fibers=r.kind==='fascia'?8:10;
+      for(let i=0;i<fibers;i++){
+        const y=34+i*5.5,amp=1.8+load*8;
+        let d=`M-15 ${y}`;
+        for(let j=0;j<7;j++){
+          const x=j*60-15;d+=` C${x+18} ${fmt(y-amp)} ${x+37} ${fmt(y+amp)} ${x+60} ${y}`;
+        }
+        svg+=`<path d="${d}" fill="none" stroke="${tint}" stroke-width="${i%3===0?2.1:1.3}" opacity="${.42+(i%3)*.15}"/>`;
+      }
+      for(let i=0;i<9;i++)svg+=`<ellipse cx="${25+i*37}" cy="${43+(i%4)*10}" rx="${6+load*10}" ry="${3+load*3}" fill="#bb7899" opacity="${fmt(Math.max(0,load-.12)*.5)}"/>`;
+    }
+    $('microDrawing').innerHTML=svg;
+    const condition=state.week<.2?'Baseline':load<.24?'Low accumulated load':load<.49?'Repeated loading':'Sustained load imbalance';
+    $('microState').textContent=condition;
+    $('microSvg').setAttribute('aria-label',`${r.name}: ${condition.toLowerCase()}. Schematic ${r.kind==='bone'?'bone architecture':'collagen fibers'}, not measured damage.`);
+  }
+  function setupChart(){
+    function path(scenario){let d='';for(let i=0;i<=120;i++){const x=8+i/120*634,y=75-loadAt(i/10,scenario)*75;d+=(i?'L':'M')+fmt(x)+' '+fmt(y);}return d;}
+    $('overloadPath').setAttribute('d',path('overload'));$('balancedPath').setAttribute('d',path('balanced'));
+  }
+  function updateTimeline(){
+    const v=loadAt(state.week),x=8+state.week/12*634,y=75-v*75;
+    $('weekSlider').value=fmt(state.week);$('weekSlider').setAttribute('aria-valuetext',`Week ${state.week.toFixed(1)} of 12`);
+    $('weekLabel').textContent='Week '+(Math.round(state.week*10)/10).toLocaleString('en',{maximumFractionDigits:1});
+    $('chartCursor').setAttribute('d',`M${fmt(x)} 8V77`);$('chartDot').setAttribute('cx',fmt(x));$('chartDot').setAttribute('cy',fmt(y));
+    $('chartDot').setAttribute('fill',state.scenario==='balanced'?'#719780':'#8b6ab6');
+    $('chartReveal').setAttribute('width',fmt(x));
+    $('chartArea').setAttribute('d',$(state.scenario==='balanced'?'balancedPath':'overloadPath').getAttribute('d')+'L642 77L8 77Z');
+    $('overloadPath').setAttribute('opacity',state.scenario==='overload'?'1':'.4');$('balancedPath').setAttribute('opacity',state.scenario==='balanced'?'1':'.7');
+    $('balanceBar').style.width=fmt(v*100)+'%';
+    let title,description;
+    if(state.week<.2){title='A fresh starting point';description='Press play or move the slider. Watch the highlighted tissue change as loading accumulates.';}
+    else if(state.scenario==='balanced'){title='Room to recover';description='Recovery intervals limit accumulated fatigue in this model. Real tissue adaptation varies between dancers.';}
+    else if(v<.24){title='Load begins to add up';description='The early loading cycles add a small amount of illustrative fatigue when recovery is limited.';}
+    else if(v<.49){title='Repeated strain';description='The balance shifts as loading continues to exceed recovery. This does not establish an injury.';}
+    else{title='Recovery falls behind';description='Sustained imbalance can contribute to overuse injury. The color shows a concept, not a diagnosis.';}
+    $('balanceValue').textContent=title;$('balanceText').textContent=description;
+    $('balanceMeter').setAttribute('aria-label','Illustrative accumulated load: '+title.toLowerCase());
+    drawMicro();
+  }
+  document.querySelectorAll('[data-jump]').forEach(button=>button.addEventListener('click',()=>{
+    state.jump=button.dataset.jump;state.phase=0;state.repeatCount=0;configurePhases();
+    document.querySelectorAll('[data-jump]').forEach(el=>el.setAttribute('aria-pressed',String(el===button)));
+    $('jumpTitle').textContent=jumpInfo[state.jump].title;$('jumpDescription').textContent=jumpInfo[state.jump].description;
+    $('anatomyDesc').textContent=jumpInfo[state.jump].caption+' Select a labeled structure or the region buttons to explore its loading.';
+    $('jumpLoadNote').textContent=jumpEffects[state.jump][state.region];
+    configureView();updateTimeline();updatePlayButtons();draw();
+  }));
+  document.querySelectorAll('[data-region]').forEach(button=>button.addEventListener('click',()=>selectRegion(button.dataset.region)));
+  $('motionSlider').addEventListener('input',event=>{state.motion=false;state.phase=Number(event.target.value)/1000;updatePlayButtons();draw();});
+  $('motionSpeed').addEventListener('change',event=>{state.speed=Number(event.target.value);});
+  $('motionToggle').addEventListener('click',()=>{if(state.phase>=1)advanceMovement(0);state.motion=!state.motion;updatePlayButtons();draw();});
+  $('timelineToggle').addEventListener('click',()=>{if(state.week>=12)state.week=0;state.timeline=!state.timeline;updatePlayButtons();updateTimeline();});
+  $('weekSlider').addEventListener('input',event=>{state.timeline=false;state.week=Number(event.target.value);updatePlayButtons();updateTimeline();draw();});
+  $('resetTimeline').addEventListener('click',()=>{state.week=0;state.timeline=false;updatePlayButtons();updateTimeline();draw();});
+  document.querySelectorAll('[data-scenario]').forEach(button=>button.addEventListener('click',()=>{
+    state.scenario=button.dataset.scenario;
+    document.querySelectorAll('[data-scenario]').forEach(el=>el.setAttribute('aria-pressed',String(el===button)));
+    updateTimeline();draw();
+  }));
+  ['aboutLink','learnLink'].forEach(id=>$(id).addEventListener('click',()=>{$('about').open=true;}));
+  if(location.hash==='#about')$('about').open=true;
+  reducedMotion.addEventListener('change',event=>{if(event.matches){state.motion=false;state.timeline=false;updatePlayButtons();}});
+  let toastTimer;
+  $('downloadBtn').addEventListener('click',()=>{
+    const blob=new Blob([downloadableHTML],{type:'text/html;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+    link.href=url;link.download='kinetic-dance-anatomy.html';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);
+    $('toast').textContent='Your self-contained HTML is ready. Open it in any modern browser.';$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,4500);
+  });
+  function advanceMovement(seconds){
+    let span=movementDuration(),next=state.phase+seconds/span;
+    while(next>=1-1e-10){
+      const remainder=Math.max(0,next-1)*span;
+      if(state.jump==='jete')state.repeatCount++;
+      span=movementDuration();next=remainder/span;
+    }
+    state.phase=next;
+  }
+  function animate(time){
+    const dt=state.lastTime?Math.min((time-state.lastTime)/1000,.06):0;state.lastTime=time;
+    if(!document.hidden){
+      const redraw=state.motion||state.timeline;
+      if(state.motion){
+        advanceMovement(dt*state.speed);
+      }
+      if(state.timeline){state.week=Math.min(12,state.week+dt*.62);if(state.week>=12){state.timeline=false;updatePlayButtons();}updateTimeline();}
+      if(redraw)draw();
+    }
+    requestAnimationFrame(animate);
+  }
+  buildLabels();setupChart();configurePhases();selectRegion('achilles');configureView();updatePlayButtons();requestAnimationFrame(animate);
+})();
+</script>
+</body>
+</html>
